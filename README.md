@@ -1,4 +1,4 @@
-# Intent-to-Auditable-Trust-Object-(IATO-V2)
+# Intent-to-Auditable-Trust-Object (IATO-V2)
 
 A production-oriented FastAPI service for **banknote authenticity prediction** using a trained scikit-learn classifier.
 
