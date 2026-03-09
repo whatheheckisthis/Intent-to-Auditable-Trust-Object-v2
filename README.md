@@ -1,10 +1,9 @@
-# Fast-API: Banknote Authentication Service
+# Intent-to-Auditable-Trust-Object-(IATO-V2)
 
 A production-oriented FastAPI service for **banknote authenticity prediction** using a trained scikit-learn classifier.
 
 This repository provides a lightweight inference API, health endpoint, and OpenAPI documentation suitable for controlled deployment and integration into security-conscious environments.
 
----
 
 ## 1) Solution Overview
 
@@ -46,7 +45,7 @@ Implementation details and endpoint behavior are in `Fast_Api/README.md` and cod
 
 ---
 
-## 3) Compliance and Control Mapping (Informative)
+## 3) Control Mapping 
 
 The table below maps repository capabilities to commonly requested control families. These mappings are **informative guidance** to assist governance conversations and do **not** represent an attestation or certification by themselves.
 
@@ -57,13 +56,12 @@ The table below maps repository capabilities to commonly requested control famil
 | **Essential Eight (ACSC)** | Baseline cyber resilience controls | Compatible with hardened deployment pipelines, patching, and application control patterns. Pair with host/container hardening, privileged access restrictions, MFA, and backup validation to align with E8 maturity targets. |
 | **ISO/IEC standards (e.g., 27001, 27002, 27017, 27018)** | ISMS alignment and control implementation | Supports secure SDLC and service documentation practices through explicit interfaces and reproducible startup process. Requires organizational ISMS processes, risk treatment, asset inventory, supplier controls, and monitoring for formal ISO alignment. |
 
-### Practical interpretation
 - This codebase can be a **technical component** in a compliant platform.
 - Compliance outcomes depend on **people, process, and platform controls** beyond application code.
 
 ---
 
-## 4) Quick Start (Clear, Explicit)
+## 4) Quick Start 
 
 ### Prerequisites
 - Python 3.9+ recommended.
@@ -99,8 +97,6 @@ curl -X POST 'http://127.0.0.1:8000/predict' \
 - Swagger UI: `http://127.0.0.1:8000/docs`
 - ReDoc: `http://127.0.0.1:8000/redoc`
 
----
-
 ## 5) Repository Layout
 
 - `Fast_Api/app.py` – FastAPI application and routes.
@@ -108,10 +104,8 @@ curl -X POST 'http://127.0.0.1:8000/predict' \
 - `Fast_Api/BankNotes.py` – request/feature schema definitions.
 - `Fast_Api/classifier.pkl` – trained model artifact.
 - `Fast_Api/requirements.txt` – Python dependencies.
-
----
-
-## 6) Security and Deployment Notes
+  
+## 6) Security and Deployment
 
 For production environments:
 - Add authentication/authorization controls in front of `/predict`.
@@ -120,10 +114,6 @@ For production environments:
 - Apply dependency and container image scanning in CI/CD.
 - Use environment-specific configuration and secret stores.
 - Define model versioning and rollback strategy.
-
----
-
-## 7) Standards and Claims Disclaimer
 
 This README provides a **control-mapping reference** for engineering and governance teams. It is not a substitute for:
 - Formal certification audits,
