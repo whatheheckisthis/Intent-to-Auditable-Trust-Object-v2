@@ -1,13 +1,19 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Tue Nov 17 21:51:19 2020
+"""Pydantic models for API requests and responses."""
 
-@author: win10
-"""
-from pydantic import BaseModel
-# 2. Class which describes Bank Notes measurements
-class BankNote(BaseModel):
-    variance: float 
-    skewness: float 
-    curtosis: float 
-    entropy: float
+from pydantic import BaseModel, Field
+
+
+class BankNoteFeatures(BaseModel):
+    """Input payload used to classify a bank note."""
+
+    variance: float = Field(..., description="Variance of wavelet transformed image")
+    skewness: float = Field(..., description="Skewness of wavelet transformed image")
+    curtosis: float = Field(..., description="Curtosis of wavelet transformed image")
+    entropy: float = Field(..., description="Entropy of image")
+
+
+class PredictionResponse(BaseModel):
+    """Prediction payload returned by the API."""
+
+    prediction: str
+    label: int
